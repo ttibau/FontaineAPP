@@ -18,7 +18,10 @@ import {
     Bar,
     UserStatsLabel,
     DefaultStatsLabel,
-    UserStats
+    UserStats,
+    BtnNewInstalation,
+    BtnNewInstalationTxt,
+    AccreditedInformation
 } from './Profile.style'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../../config/theme'
@@ -45,6 +48,10 @@ function Profile(){
                     </PictureContainer>
                 </ProfileImageContent>
                 <ProfileContent>
+                    <ImgLogo 
+                        source={require('../../assets/img/logo1.png')}
+                        resizeMode="contain"
+                    />
                     <ProfileName style={styles.defaultTxt}>
                         John Doe
                     </ProfileName>
@@ -68,6 +75,15 @@ function Profile(){
                             <DefaultStatsLabel>PONTOS</DefaultStatsLabel>
                         </UserStats>
                     </UserStatsCount>
+                    <AccreditedInformation>
+                        Credenciado desde: 01/04/2019
+                    </AccreditedInformation>
+                    <BtnNewInstalation>
+                        <Icon name="plus" color={theme.color5} size={15} /> 
+                        <BtnNewInstalationTxt>
+                            NOVA INSTALAÇÃO
+                        </BtnNewInstalationTxt>
+                    </BtnNewInstalation>
                 </ProfileContent>
             </ScrollView>
         </ProfileContainer>

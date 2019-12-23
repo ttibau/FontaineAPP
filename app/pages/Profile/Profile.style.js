@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
     container: {
-        flex: 1 
+        flex: 1,
+        paddingBottom: 20
     },
     defaultTxt: {
         fontFamily: 'Amaranth-Regular'
@@ -14,7 +15,8 @@ export const styles = StyleSheet.create({
     userAnimation: {
         width: 80,
         height: 80,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginTop: 3
     },
     barRight: {
         borderRightWidth: 1,
@@ -32,7 +34,7 @@ export const Bar = styled.View``
 
 export const BlueBar = styled.View`
     background-color: #002c77;
-    height: 190px;
+    height: 150px;
     width: 100%;
     justify-content: center;
     flex-direction: row;
@@ -68,13 +70,11 @@ export const ProfileImage = styled.Image`
 export const ProfileName = styled.Text`
     color: #333333;
     font-size: 28px;
-    margin: 80px 0 0 0;
 `
 
 export const ImgLogo = styled.Image`
-    width: 80px;
-    height: 80px; 
-    margin: 20px 0 0 20px;
+    width: 160px;
+    height: 160px; 
 `
 
 export const ProfileSubtitle = styled.Text`
@@ -132,5 +132,28 @@ export const DefaultStatsLabel = styled.Text`
 
 export const UserStats = styled.View`
     justify-content: center;
-    align-items: center
+    align-items: center;
+`
+
+export const BtnNewInstalation = styled.TouchableOpacity`
+    background-color: #002c77;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 20px;
+    flex-direction: row;
+    margin-bottom: 35px;
+`
+
+export const BtnNewInstalationTxt = styled.Text`
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+`
+
+export const AccreditedInformation = styled.Text`
+    color: #333333;
+    font-size: 12px;
 `

@@ -8,7 +8,6 @@ import penguim from '../../assets/animations/penguim.json'
 
 
 function Login(props) {
-    console.log(props)
     return (
         <LinearGradient colors={[theme.mainColor, theme.color4]} style={styles.linearGradient}>
             <LoginViewAnimation>
