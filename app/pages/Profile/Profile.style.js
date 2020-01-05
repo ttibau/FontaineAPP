@@ -32,6 +32,12 @@ export const ProfileContainer = styled.View`
 
 export const Bar = styled.View``
 
+
+export const ProfileImageContent = styled.View`
+    justify-content: center;
+    align-items: center;
+`
+
 export const BlueBar = styled.View`
     background-color: #002c77;
     height: 150px;
@@ -40,9 +46,19 @@ export const BlueBar = styled.View`
     flex-direction: row;
 `
 
-export const ProfileImageContent = styled.View`
+export const LogoutBtn = styled.TouchableOpacity`
+    background-color: #EEEDFF;
+    padding: 15px;
+    height: 20px;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+`
+
+export const LogoutTxt = styled.Text`
+    color: #002c77;
+    font-size: 15px;
 `
 
 export const ProfileContent = styled.View`

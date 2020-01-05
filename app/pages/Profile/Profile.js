@@ -21,7 +21,9 @@ import {
     UserStats,
     BtnNewInstalation,
     BtnNewInstalationTxt,
-    AccreditedInformation
+    AccreditedInformation,
+    LogoutBtn,
+    LogoutTxt
 } from './Profile.style'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../../config/theme'
@@ -41,6 +43,10 @@ function Profile(){
                     <PointsSubtitle style={styles.defaultTxt}>
                         Pontos
                     </PointsSubtitle>
+
+                    <LogoutBtn>
+                        <LogoutTxt>Sair</LogoutTxt>
+                    </LogoutBtn>
                 </BlueBar>
                 <ProfileImageContent>
                     <PictureContainer>
@@ -67,20 +73,20 @@ function Profile(){
                     <UserStatsCount>
                         <UserStats>
                             <DefaultStatsCount style={styles.defaultTxt}>+123</DefaultStatsCount>
-                            <DefaultStatsLabel>INSTALAÇÕES</DefaultStatsLabel>
+                            <DefaultStatsLabel style={styles.defaultTxt}>INSTALAÇÕES</DefaultStatsLabel>
                         </UserStats>
                         <Bar style={styles.barRight} />
                         <UserStats>
                             <DefaultStatsCount style={styles.defaultTxt}>+342</DefaultStatsCount>
-                            <DefaultStatsLabel>PONTOS</DefaultStatsLabel>
+                            <DefaultStatsLabel style={styles.defaultTxt}>PONTOS</DefaultStatsLabel>
                         </UserStats>
                     </UserStatsCount>
-                    <AccreditedInformation>
+                    <AccreditedInformation style={styles.defaultTxt}>
                         Credenciado desde: 01/04/2019
                     </AccreditedInformation>
                     <BtnNewInstalation>
                         <Icon name="plus" color={theme.color5} size={15} /> 
-                        <BtnNewInstalationTxt>
+                        <BtnNewInstalationTxt style={styles.defaultTxt}>
                             NOVA INSTALAÇÃO
                         </BtnNewInstalationTxt>
                     </BtnNewInstalation>
