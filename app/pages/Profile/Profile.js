@@ -32,7 +32,7 @@ import user from '../../assets/animations/user.json'
 import { ScrollView } from 'react-native'
 
 
-function Profile(){
+function Profile(props){
     return (
         <ProfileContainer>
             <ScrollView>
@@ -44,7 +44,7 @@ function Profile(){
                         Pontos
                     </PointsSubtitle>
 
-                    <LogoutBtn>
+                    <LogoutBtn onPress={() => props.navigation.navigate('Login')}>
                         <LogoutTxt>Sair</LogoutTxt>
                     </LogoutBtn>
                 </BlueBar>

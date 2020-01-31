@@ -1,11 +1,11 @@
 import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
-import { Login, Profile, Products, Instalations } from '../pages'
+import { Profile, Products, Instalations, Login } from '../pages'
 
 const appNavigator = createStackNavigator({
     Login: {
-        screen: Login,
+        screen: Login
     },
     Profile: {
         screen: createMaterialTopTabNavigator({
