@@ -127,7 +127,8 @@ export const Points = styled.Text`
 export const PointsSubtitle = styled.Text`
     color: #d3d3d3;
     font-size: 15px;
-    margin-top: 60px;
+    margin-top: 38px; 
+    margin-left: 6px;
 `
 
 export const UserStatsTitle = styled.Text`
@@ -142,7 +143,7 @@ export const DefaultStatsCount = styled.Text`
 `
 
 export const DefaultStatsLabel = styled.Text`
-    color: #008A90;
+    color: #375993;
     font-size: 15px;
 `
 
@@ -160,12 +161,28 @@ export const BtnNewInstalation = styled.TouchableOpacity`
     border-radius: 25px;
     margin-top: 20px;
     flex-direction: row;
+`
+
+export const BtnLogout = styled.TouchableOpacity`
+    background-color: #002c77;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 20px;
+    flex-direction: row;
     margin-bottom: 35px;
 `
 
 export const BtnNewInstalationTxt = styled.Text`
     color: white;
     font-size: 20px;
+    margin-left: 10px;
+`
+
+export const BtnLogoutTxt = styled.Text`
+    color: white;
     margin-left: 10px;
 `
 

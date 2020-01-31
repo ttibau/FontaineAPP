@@ -1,6 +1,6 @@
 import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
-import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
+import { createMaterialTopTabNavigator, createTabNavigator } from 'react-navigation-tabs'
 import { Profile, Products, Instalations, Login } from '../pages'
 
 const appNavigator = createStackNavigator({
@@ -27,6 +27,18 @@ const appNavigator = createStackNavigator({
                     title: 'Minhas instalações'
                 }
             }
+        }, {
+            tabBarOptions: {
+                labelStyle: {
+                  fontSize: 12,
+                },
+                tabStyle: {
+                //   width: 100,
+                },
+                style: {
+                  backgroundColor: '#375993',
+                },
+              }
         }),
         navigationOptions: {
             header: null

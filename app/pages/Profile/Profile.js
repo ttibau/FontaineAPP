@@ -23,7 +23,9 @@ import {
     BtnNewInstalationTxt,
     AccreditedInformation,
     LogoutBtn,
-    LogoutTxt
+    LogoutTxt,
+    BtnLogout,
+    BtnLogoutTxt
 } from './Profile.style'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../../config/theme'
@@ -41,12 +43,8 @@ function Profile(props){
                         178356
                     </Points>
                     <PointsSubtitle style={styles.defaultTxt}>
-                        Pontos
+                        pontos
                     </PointsSubtitle>
-
-                    <LogoutBtn onPress={() => props.navigation.navigate('Login')}>
-                        <LogoutTxt>Sair</LogoutTxt>
-                    </LogoutBtn>
                 </BlueBar>
                 <ProfileImageContent>
                     <PictureContainer>
@@ -90,6 +88,12 @@ function Profile(props){
                             NOVA INSTALAÇÃO
                         </BtnNewInstalationTxt>
                     </BtnNewInstalation>
+                    <BtnLogout onPress={() => props.navigation.navigate('Login')}>
+                        <Icon name="sign-out" color={theme.color5} size={15} /> 
+                        <BtnLogoutTxt style={styles.defaultTxt}>
+                            SAIR
+                        </BtnLogoutTxt>
+                    </BtnLogout>
                 </ProfileContent>
             </ScrollView>
         </ProfileContainer>
