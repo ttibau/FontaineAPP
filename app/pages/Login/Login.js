@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ImageBG, ButtonGroup, GestureBtn, GestureBtnTxt, LoginTextInput, TxtSignIn, styles } from './Login.styles'
-import { View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Dimensions, TouchableOpacity, Keyboard } from 'react-native'
 import Animated, { Easing } from 'react-native-reanimated'
 import { TapGestureHandler, State } from 'react-native-gesture-handler'
 import Svg, { Image, Circle, ClipPath } from 'react-native-svg'
@@ -25,7 +25,21 @@ const {
 const { width, height } = Dimensions.get('window')
 
 export default function Login(props) {
+    const [buttonCloseLogin, setButtonCloseLogin] = useState(true)
     let buttonOpacity = new Value(1)
+
+    // useEffect(() => {
+    //     keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', keyboardDidShow)
+    //     keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', keyboardDidHide)
+    // }, [])
+
+    // function keyboardDidShow() {
+    //     setButtonCloseLogin(false)
+    // }
+
+    // function keyboardDidHide() {
+    //     setButtonCloseLogin(true)
+    // }
 
     onStateChange = event([
         {
@@ -51,7 +65,7 @@ export default function Login(props) {
 
     let bgY = interpolate(buttonOpacity, {
         inputRange: [0, 1], 
-        outputRange: [-height / 3 - 30, 0],
+        outputRange: [-height / 3, 0],
         extrapolate: Extrapolate.CLAMP
     })
 
@@ -153,16 +167,18 @@ export default function Login(props) {
                     transform: [{ translateY: textInputY }]
                 }}>
 
-                    <TapGestureHandler onHandlerStateChange={onCloseLoginScene}>
-                        <Animated.View style={styles.closeButton}>
-                            {/* SEMPRE QUE CLICAR NO X, DESATIVAR O TERCLADO */}
-                            <Animated.Text style={{ 
-                                fontSize: 15, 
-                                transform: [{rotate: concat(rotateCloseButton, 'deg')}]}}>
-                                X
-                            </Animated.Text>
-                        </Animated.View>
-                    </TapGestureHandler>
+                    {/* {buttonCloseLogin && */}
+                        <TapGestureHandler onHandlerStateChange={onCloseLoginScene}>
+                            <Animated.View style={styles.closeButton}>
+                                {/* SEMPRE QUE CLICAR NO X, DESATIVAR O TERCLADO */}
+                                <Animated.Text style={{ 
+                                    fontSize: 15, 
+                                    transform: [{rotate: concat(rotateCloseButton, 'deg')}]}}>
+                                    X
+                                </Animated.Text>
+                            </Animated.View>
+                        </TapGestureHandler>
+                    {/* } */}
 
                     <LoginTextInput 
                       placeholder="LOGIN"

@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        top: -20,
+        top: "-25%",
         left: width / 2 - 20,
         shadowOffset: { width: 2, height: 2 }, 
         shadowColor: 'black', 
@@ -92,7 +92,7 @@ export const TxtSignIn = styled.Text`
 `
 
 export const GestureBtn = styled.View`
-    background-color: ${props => props.white ? "#002c77" : "white"};
+    background-color: ${props => props.white ? "transparent" : "white"};
     height: 70px;
     margin: 5px 20px 5px 20px;
     border-radius: 35px;
