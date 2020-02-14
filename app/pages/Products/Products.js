@@ -13,7 +13,7 @@ import {
 } from './Products.styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { ScrollView, View } from 'react-native'
-
+import { GetProductModal } from '../../components/'
 
 function Products() {
     return (
@@ -49,6 +49,7 @@ function Products() {
                     </ProductContainer>
                 </View>
             </ScrollView>
+            {/* <GetProductModal /> */}
         </Container>
     )
 }
