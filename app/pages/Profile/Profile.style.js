@@ -157,7 +157,6 @@ export const BtnNewInstalation = styled.TouchableOpacity`
     padding: 20px;
     justify-content: center;
     align-items: center;
-    height: 50px;
     border-radius: 25px;
     margin-top: 20px;
     flex-direction: row;
@@ -168,7 +167,6 @@ export const BtnLogout = styled.TouchableOpacity`
     padding: 20px;
     justify-content: center;
     align-items: center;
-    height: 50px;
     border-radius: 25px;
     margin-top: 20px;
     flex-direction: row;

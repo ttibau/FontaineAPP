@@ -1,7 +1,17 @@
+import React from 'react'
 import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
-import { createMaterialTopTabNavigator, createTabNavigator } from 'react-navigation-tabs'
+import { createMaterialTopTabNavigator, MaterialTopTabBar } from 'react-navigation-tabs'
 import { Profile, Products, Instalations, Login } from '../pages'
+import { SafeAreaView } from 'react-native'
+
+function SafeAreaMaterialTopTabBar (props) {
+    return (
+      <SafeAreaView>
+        <MaterialTopTabBar {...props} />
+      </SafeAreaView>
+    )
+  }
 
 const appNavigator = createStackNavigator({
     Login: {
@@ -38,7 +48,8 @@ const appNavigator = createStackNavigator({
                 style: {
                   backgroundColor: '#375993',
                 },
-              }
+              },
+              tabBarComponent: SafeAreaMaterialTopTabBar
         }),
         navigationOptions: {
             header: null

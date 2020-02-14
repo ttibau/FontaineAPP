@@ -24,6 +24,11 @@
 		89AE3ACAE3E8BE9C021F416D /* Pods_Fontaine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4324926F7781CBFF98104B /* Pods_Fontaine.framework */; };
 		A71E132F71500AA169A9F72C /* Pods_Fontaine_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCEC61B7A58EAC1A1603247 /* Pods_Fontaine_tvOSTests.framework */; };
 		CD648C861DDA56CDA2026C67 /* Pods_FontaineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A1DF28AF501937AC59C1A1 /* Pods_FontaineTests.framework */; };
+		F9554A7023F6C37E00D915B7 /* Amaranth-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9554A6C23F6C37E00D915B7 /* Amaranth-Bold.ttf */; };
+		F9554A7123F6C37E00D915B7 /* Amaranth-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9554A6D23F6C37E00D915B7 /* Amaranth-Italic.ttf */; };
+		F9554A7223F6C37E00D915B7 /* Amaranth-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9554A6E23F6C37E00D915B7 /* Amaranth-Regular.ttf */; };
+		F9554A7323F6C37E00D915B7 /* Amaranth-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9554A6F23F6C37E00D915B7 /* Amaranth-BoldItalic.ttf */; };
+		F9554A7423F6C5AB00D915B7 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F93F8C8A23F63F88006EF796 /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +111,10 @@
 		F93F8C9423F63F89006EF796 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		F93F8C9523F63F8A006EF796 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		F93F8C9623F63F8A006EF796 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		F9554A6C23F6C37E00D915B7 /* Amaranth-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amaranth-Bold.ttf"; path = "../../app/assets/fonts/Amaranth-Bold.ttf"; sourceTree = "<group>"; };
+		F9554A6D23F6C37E00D915B7 /* Amaranth-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amaranth-Italic.ttf"; path = "../../app/assets/fonts/Amaranth-Italic.ttf"; sourceTree = "<group>"; };
+		F9554A6E23F6C37E00D915B7 /* Amaranth-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amaranth-Regular.ttf"; path = "../../app/assets/fonts/Amaranth-Regular.ttf"; sourceTree = "<group>"; };
+		F9554A6F23F6C37E00D915B7 /* Amaranth-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amaranth-BoldItalic.ttf"; path = "../../app/assets/fonts/Amaranth-BoldItalic.ttf"; sourceTree = "<group>"; };
 		FD8BAB0E8CC34CD68DA6D411 /* Amaranth-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Amaranth-Italic.ttf"; path = "../app/assets/fonts/Amaranth-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +280,10 @@
 			children = (
 				F93F8C9323F63F89006EF796 /* AntDesign.ttf */,
 				F93F8C9223F63F89006EF796 /* Entypo.ttf */,
+				F9554A6C23F6C37E00D915B7 /* Amaranth-Bold.ttf */,
+				F9554A6F23F6C37E00D915B7 /* Amaranth-BoldItalic.ttf */,
+				F9554A6D23F6C37E00D915B7 /* Amaranth-Italic.ttf */,
+				F9554A6E23F6C37E00D915B7 /* Amaranth-Regular.ttf */,
 				F93F8C8723F63F88006EF796 /* EvilIcons.ttf */,
 				F93F8C9623F63F8A006EF796 /* Feather.ttf */,
 				F93F8C8A23F63F88006EF796 /* FontAwesome.ttf */,
@@ -432,11 +445,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9554A7423F6C5AB00D915B7 /* FontAwesome.ttf in Resources */,
+				F9554A7023F6C37E00D915B7 /* Amaranth-Bold.ttf in Resources */,
+				F9554A7223F6C37E00D915B7 /* Amaranth-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				1BB0285B862D4CCF9CD29EC3 /* Amaranth-Bold.ttf in Resources */,
+				F9554A7323F6C37E00D915B7 /* Amaranth-BoldItalic.ttf in Resources */,
 				32FFA11D9F1F46E987457BA2 /* Amaranth-BoldItalic.ttf in Resources */,
 				00A2DF30576D4EAF8275F7F4 /* Amaranth-Italic.ttf in Resources */,
+				F9554A7123F6C37E00D915B7 /* Amaranth-Italic.ttf in Resources */,
 				293FFD892A75418498F1E53B /* Amaranth-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
