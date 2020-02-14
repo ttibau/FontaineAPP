@@ -27,7 +27,6 @@ const { width, height } = Dimensions.get('window')
 export default function Login(props) {
     const [buttonCloseLogin, setButtonCloseLogin] = useState(true)
     let buttonOpacity = new Value(1)
-
     // useEffect(() => {
     //     keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', keyboardDidShow)
     //     keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', keyboardDidHide)
