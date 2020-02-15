@@ -3,11 +3,15 @@ import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator, MaterialTopTabBar } from 'react-navigation-tabs'
 import { Profile, Products, Instalations, Login } from '../pages'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, StatusBar } from 'react-native'
 
 function SafeAreaMaterialTopTabBar (props) {
     return (
       <SafeAreaView>
+        {/* <StatusBar
+          barStyle="light-content"
+          backgroundColor={'red'}
+        /> */}
         <MaterialTopTabBar {...props} />
       </SafeAreaView>
     )

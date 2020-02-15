@@ -2,13 +2,16 @@ import { createStore } from 'redux'
 
 const INITIAL_STATE = {
     Fontaine: [],
+    getProductModalVisible: false
 }
 
 // Reducer
 function Fontaine(state=INITIAL_STATE, action) {
     switch(action.type){
-        case 'ADD_ANIME':
-            return { ...state, Fontaine: [...state.Fontaine, action.title ]}
+        case 'SHOW_MODAL_GETPRODUCT':
+            return { ...state, getProductModalVisible: true }
+        case 'CLOSE_MODAL_GETPRODUCT':
+            return { ...state, getProductModalVisible: false }
         default:
             return state
     }

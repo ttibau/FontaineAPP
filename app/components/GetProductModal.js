@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Modal, { ModalContent, ScaleAnimation } from 'react-native-modals';
 import { Text } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
+
 function GetProductModal()  {
-    let modalVisible = true
+    const dispatch = useDispatch()
+    let modalVisible = useSelector(state => state.getProductModalVisible)
+
     return(
         <Modal
             visible={modalVisible}
-            onTouchOutside={() =>  modalVisible = false}
+            onTouchOutside={() =>  dispatch({ type: 'CLOSE_MODAL_GETPRODUCT' })}
             modalAnimation={new ScaleAnimation({
                 initialValue: 0,
                 useNativeDriver: true,
