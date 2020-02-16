@@ -9,47 +9,77 @@ import {
     ProductPrice,
     ProductPriceTxt,
     BtnTrade,
-    TxtBtnTrade
+    TxtBtnTrade,
+    ProductInfo
 } from './Products.styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { ScrollView, View } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { GetProductModal } from '../../components/'
+import { styles } from '../../components/styles'
+import LottieView from 'lottie-react-native';
+import coin from '../../assets/animations/coin.json'
 
 function Products() {
     const dispatch = useDispatch()
     return (
         <Container>
             <InfoBar>
-                
+                <LottieView source={coin} autoPlay loop style={styles.coinAnimation} />
+                <PointsCount style={styles.defaultTxt}>23563 pontos</PointsCount>
             </InfoBar>
             <ScrollView>
-                {/* DEPOIS VOU REMOVER ESTA VIEW */}
-                <View style={{ flexDirection: 'row'}}>
-                    <ProductContainer>
-                        <ProductImage 
-                            source={require('../../assets/img/ferramentas.png')}
-                        />
-                        <ProductTitle>
-                            Mala de Ferramentas Tool Center 18
-                        </ProductTitle>
-                    </ProductContainer>
-                    <ProductContainer>
-                        <ProductImage 
-                            source={require('../../assets/img/ferramentas.png')}
-                        />
-                        <ProductTitle>
+                <ProductContainer>
+                    <ProductImage 
+                        source={require('../../assets/img/ferramentas.png')}
+                    />
+                    <ProductInfo>
+                        <ProductTitle style={styles.defaultTxt}>
                             Mala de Ferramentas Tool Center 18
                         </ProductTitle>
                         <ProductPrice>
-                            <Icon name="money" color="#900" size={20} />
-                            <ProductPriceTxt>4321 pontos</ProductPriceTxt>
+                            <Icon name="money" color="#002c77" size={20} />
+                            <ProductPriceTxt style={styles.defaultTxt}>1948 pontos</ProductPriceTxt>
                         </ProductPrice>
                         <BtnTrade onPress={() => dispatch({ type: 'SHOW_MODAL_GETPRODUCT' })}>
-                            <TxtBtnTrade>TROCAR</TxtBtnTrade>
+                            <TxtBtnTrade style={styles.defaultTxt}>TROCAR</TxtBtnTrade>
                         </BtnTrade>
-                    </ProductContainer>
-                </View>
+                    </ProductInfo>
+                </ProductContainer>
+                <ProductContainer>
+                    <ProductImage 
+                        source={require('../../assets/img/ferramentas.png')}
+                    />
+                    <ProductInfo>
+                        <ProductTitle style={styles.defaultTxt}>
+                            Mala de Ferramentas Tool Center 18
+                        </ProductTitle>
+                        <ProductPrice>
+                            <Icon name="money" color="#002c77" size={20} />
+                            <ProductPriceTxt style={styles.defaultTxt}>1948 pontos</ProductPriceTxt>
+                        </ProductPrice>
+                        <BtnTrade onPress={() => dispatch({ type: 'SHOW_MODAL_GETPRODUCT' })}>
+                            <TxtBtnTrade style={styles.defaultTxt}>TROCAR</TxtBtnTrade>
+                        </BtnTrade>
+                    </ProductInfo>
+                </ProductContainer>
+                <ProductContainer>
+                    <ProductImage 
+                        source={require('../../assets/img/ferramentas.png')}
+                    />
+                    <ProductInfo>
+                        <ProductTitle style={styles.defaultTxt}>
+                            Mala de Ferramentas Tool Center 18
+                        </ProductTitle>
+                        <ProductPrice>
+                            <Icon name="money" color="#002c77" size={20} />
+                            <ProductPriceTxt style={styles.defaultTxt}>1948 pontos</ProductPriceTxt>
+                        </ProductPrice>
+                        <BtnTrade onPress={() => dispatch({ type: 'SHOW_MODAL_GETPRODUCT' })}>
+                            <TxtBtnTrade style={styles.defaultTxt}>TROCAR</TxtBtnTrade>
+                        </BtnTrade>
+                    </ProductInfo>
+                </ProductContainer>
             </ScrollView>
             <GetProductModal />
         </Container>

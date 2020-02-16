@@ -12,18 +12,18 @@ export const PointsCount = styled.Text`
 export const ProductContainer = styled.View`
     background-color: #d3d3d3;
     border-radius: 5px;
-    padding: 15px;
-    margin: 20px;
-    width: 40%;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
+    margin: 10px 20px;
+    flex-direction: row;
+`
+export const ProductInfo = styled.View`
+    padding: 10px;
 `
 
 export const ProductImage = styled.Image`
     width: 100px;
     height: 100px;
     border-radius: 100px;
-    margin: 5px;
 `
 
 export const ProductTitle = styled.Text`
@@ -37,12 +37,13 @@ export const InfoBar = styled.View`
     width: 100%;
     justify-content: center;
     flex-direction: row;
+    align-items: center;
 `
 
 export const ProductPrice = styled.View`
     margin-top: 10px;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-around; */
 `
 
 export const ProductPriceTxt = styled.Text`
@@ -56,6 +57,7 @@ export const BtnTrade = styled.TouchableOpacity`
     padding: 5px;
     justify-content: center;
     align-items: center;
+    border-radius: 8;
 `
 
 export const TxtBtnTrade = styled.Text`

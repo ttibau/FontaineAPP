@@ -8,12 +8,18 @@ export const styles = StyleSheet.create({
     defaultTxt: {
         fontFamily: 'Amaranth-Regular'
     },
+    coinAnimation: {
+        width: 40,
+        height: 40,
+        alignSelf: 'center',
+    },
 })
 
 export const BtnGetProductsModal = styled.TouchableOpacity`
     padding: 10px;
     background-color: ${props => props.cancel ? '#e74c3c' : '#002c77'};
     margin: 5px;
+    border-radius: 8px;
 `
 
 export const TxtBtnGetProductsModal = styled.Text`

@@ -175,7 +175,6 @@ export const BtnLogout = styled.TouchableOpacity`
 
 export const BtnNewInstalationTxt = styled.Text`
     color: white;
-    font-size: 20px;
     margin-left: 10px;
 `
 

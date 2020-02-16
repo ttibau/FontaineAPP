@@ -48,7 +48,7 @@ function GetProductModal()  {
                     <BtnGetProductsModal>
                         <TxtBtnGetProductsModal>SIM</TxtBtnGetProductsModal>
                     </BtnGetProductsModal>
-                    <BtnGetProductsModal cancel>
+                    <BtnGetProductsModal cancel onPress={() =>  dispatch({ type: 'CLOSE_MODAL_GETPRODUCT' })}>
                         <TxtBtnGetProductsModal>NÃO</TxtBtnGetProductsModal>
                     </BtnGetProductsModal>
                 </BtnGroup>
