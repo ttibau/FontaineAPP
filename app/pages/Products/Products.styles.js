@@ -8,6 +8,10 @@ export const PointsCount = styled.Text`
     color: #FFF;
     font-size: 20px;
 `
+export const ProductDescription = styled.Text`
+    flex-shrink: 1;
+    margin-top: 5px;
+`
 
 export const ProductContainer = styled.View`
     background-color: #d3d3d3;
@@ -18,6 +22,7 @@ export const ProductContainer = styled.View`
 `
 export const ProductInfo = styled.View`
     padding: 10px;
+    flex: 1;
 `
 
 export const ProductImage = styled.Image`
@@ -28,7 +33,7 @@ export const ProductImage = styled.Image`
 
 export const ProductTitle = styled.Text`
     font-weight: bold;
-    align-self: center;
+    /* align-self: center; */
 ` 
 
 export const InfoBar = styled.View`
@@ -49,6 +54,7 @@ export const ProductPrice = styled.View`
 export const ProductPriceTxt = styled.Text`
     font-size: 15px;
     margin-left: 10px;
+    font-weight: bold;
 `
 
 export const BtnTrade = styled.TouchableOpacity`

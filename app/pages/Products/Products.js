@@ -10,7 +10,8 @@ import {
     ProductPriceTxt,
     BtnTrade,
     TxtBtnTrade,
-    ProductInfo
+    ProductInfo,
+    ProductDescription
 } from './Products.styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { ScrollView, View } from 'react-native'
@@ -54,6 +55,9 @@ function Products() {
                         <ProductTitle style={styles.defaultTxt}>
                             Mala de Ferramentas Tool Center 18
                         </ProductTitle>
+                        <ProductDescription style={styles.defaultTxt}>
+                            Mala de ferramentas tool center contendo 18 diferentes adereços para ajudar na instalação dos ar condicionados Fontaine.
+                        </ProductDescription>
                         <ProductPrice>
                             <Icon name="money" color="#002c77" size={20} />
                             <ProductPriceTxt style={styles.defaultTxt}>1948 pontos</ProductPriceTxt>
