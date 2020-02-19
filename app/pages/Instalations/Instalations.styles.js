@@ -25,5 +25,22 @@ export const InstalationInfo = styled.View`
 `
 
 export const InstalationDate = styled.Text`
-    font-weight: ${props => props.bold ? '700' : '300'}
+    font-weight: ${props => props.bold ? '700' : '300'};
+    margin-left: 10px;
+`
+
+export const InstalationData = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+`
+export const AcquiredPoints = styled.Text`
+    font-weight: ${props => props.bold ? '700' : '300'};
+    margin-left: 10px;
+    color: ${props => props.acquired ? '#27ae60' : 'black'};
+`
+export const Row = styled.View`
+    flex-direction: row;
+    margin-left: 10px;
+    margin-top: 10px;
 `
