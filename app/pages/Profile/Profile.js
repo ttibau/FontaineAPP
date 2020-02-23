@@ -84,7 +84,7 @@ function Profile(props){
                     </AccreditedInformation>
                     <BtnNewInstalation>
                         <Icon name="plus" color={theme.color5} size={15} /> 
-                        <BtnNewInstalationTxt style={styles.defaultTxt}>
+                        <BtnNewInstalationTxt onPress={() => props.navigation.navigate('NewInstalation')} style={styles.defaultTxt}>
                             NOVA INSTALAÇÃO
                         </BtnNewInstalationTxt>
                     </BtnNewInstalation>

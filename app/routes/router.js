@@ -3,15 +3,12 @@ import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator, MaterialTopTabBar } from 'react-navigation-tabs'
 import { Profile, Products, Instalations, Login } from '../pages'
+import { QrCodeReader } from '../components'
 import { SafeAreaView, StatusBar } from 'react-native'
 
 function SafeAreaMaterialTopTabBar (props) {
     return (
       <SafeAreaView>
-        {/* <StatusBar
-          barStyle="light-content"
-          backgroundColor={'red'}
-        /> */}
         <MaterialTopTabBar {...props} />
       </SafeAreaView>
     )
@@ -58,6 +55,9 @@ const appNavigator = createStackNavigator({
         navigationOptions: {
             header: null
         }
+    },
+    NewInstalation: {
+      screen: QrCodeReader
     }
 })
 
