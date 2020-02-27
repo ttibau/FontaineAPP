@@ -1,34 +1,47 @@
 import React from 'react'
-import { styles } from './styles'
-import {
-    Text,
-    TouchableOpacity,
-  } from 'react-native';
-  
+import { 
+    styles,
+    ScannerContent,
+    TxtScannerTopContent,
+    ScannerBottomContent,
+    ImgLogo
+} from './styles'
+
+  import qrCode from '../assets/animations/qrCode.json'
   import QRCodeScanner from 'react-native-qrcode-scanner';
+  import LottieView from 'lottie-react-native';
 
-  function QrCodeReader(){
-    console.warn(QRCodeScanner.Constants)
-
-    
-    const onSuccess = () => {
-        console.log('sucesso')
+  function QrCodeReader(props){
+    const onSuccess = (data) => {
+        props.navigation.navigate('InstalationForm', {
+            data
+        })
     }
+
     return(
         <QRCodeScanner
             onRead={onSuccess}
             topContent={
-            <Text style={styles.centerText}>
-                Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
-            </Text>
+                <ScannerContent>
+                    <LottieView source={qrCode} autoPlay loop style={styles.qrCodeAnimation} />
+                    <TxtScannerTopContent style={styles.defaultTxt} >Direcione sua câmera para o código e aguarde a leitura</TxtScannerTopContent>
+                </ScannerContent>
             }
             bottomContent={
-            <TouchableOpacity style={styles.buttonTouchable}>
-                <Text style={styles.buttonText}>OK. Got it!</Text>
-            </TouchableOpacity>
+                <ScannerBottomContent>
+                    <ImgLogo 
+                        source={require('../assets/img/logo_com_pinguim.png')}
+                        resizeMode="contain"
+                    />
+                    <TxtScannerTopContent style={styles.defaultTxt}>Trazendo a solução para você!</TxtScannerTopContent>
+                </ScannerBottomContent>
             }
         />    
     )
+}
+
+QrCodeReader.navigationOptions = {
+    header: null
 }
 
 export default QrCodeReader

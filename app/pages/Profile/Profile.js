@@ -96,7 +96,7 @@ function Profile(props) {
                     <BtnNewInstalation onPress={() => props.navigation.navigate('NewInstalation')}>
                         <Icon name="plus" color={theme.color5} size={15} /> 
                         <BtnNewInstalationTxt style={styles.defaultTxt}>
-                            NOVA INSTALAÇÃO1
+                            NOVA INSTALAÇÃO
                         </BtnNewInstalationTxt>
                     </BtnNewInstalation>
                     <BtnLogout onPress={() => props.navigation.navigate('Login')}>

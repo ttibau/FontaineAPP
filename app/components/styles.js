@@ -30,6 +30,12 @@ export const styles = StyleSheet.create({
     buttonTouchable: {
         padding: 16,
     },
+    qrCodeAnimation: {
+        width: 120,
+        height: 120,
+        alignSelf: 'center',
+        marginLeft: 15
+    }
 })
 
 export const BtnGetProductsModal = styled.TouchableOpacity`
@@ -87,5 +93,29 @@ export const BtnGroup = styled.View`
     flex-direction: row;
     justify-content: space-between;
     margin-top:10px;
+    align-self: center;
+`
+
+export const ScannerContent = styled.View`
+    background-color: #002c77;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+`
+
+export const TxtScannerTopContent = styled.Text`
+    color: white;
+    align-self: center;
+`
+
+export const ScannerBottomContent = styled.View`
+    background-color: #002c77;
+    width: 100%;
+    height: 100%
+`
+
+export const ImgLogo = styled.Image`
+    width: 160px;
+    height: 160px;
     align-self: center;
 `

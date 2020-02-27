@@ -2,9 +2,9 @@ import React from 'react'
 import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator, MaterialTopTabBar } from 'react-navigation-tabs'
-import { Profile, Products, Instalations, Login } from '../pages'
+import { Profile, Products, Instalations, Login, InstalationForm } from '../pages'
 import { QrCodeReader } from '../components'
-import { SafeAreaView, StatusBar } from 'react-native'
+import { SafeAreaView } from 'react-native'
 
 function SafeAreaMaterialTopTabBar (props) {
     return (
@@ -58,6 +58,9 @@ const appNavigator = createStackNavigator({
     },
     NewInstalation: {
       screen: QrCodeReader
+    },
+    InstalationForm: {
+      screen: InstalationForm
     }
 })
 
