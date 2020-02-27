@@ -32,9 +32,20 @@ import { theme } from '../../config/theme'
 import LottieView from 'lottie-react-native';
 import user from '../../assets/animations/user.json'
 import { ScrollView } from 'react-native'
+import {request, PERMISSIONS, check} from 'react-native-permissions';
 
+function Profile(props) {
 
-function Profile(props){
+    async function checkPermission() {
+        try {
+            const permission = await check(PERMISSIONS.IOS.CAMERA)
+            alert(permission)
+            console.log(permission)
+        } catch(error) {
+            console.log(error)
+        }
+    }
+    
     return (
         <ProfileContainer>
             <ScrollView>
@@ -82,10 +93,10 @@ function Profile(props){
                     <AccreditedInformation style={styles.defaultTxt}>
                         Credenciado desde: 01/04/2019
                     </AccreditedInformation>
-                    <BtnNewInstalation>
+                    <BtnNewInstalation onPress={() => props.navigation.navigate('NewInstalation')}>
                         <Icon name="plus" color={theme.color5} size={15} /> 
-                        <BtnNewInstalationTxt onPress={() => props.navigation.navigate('NewInstalation')} style={styles.defaultTxt}>
-                            NOVA INSTALAÇÃO
+                        <BtnNewInstalationTxt style={styles.defaultTxt}>
+                            NOVA INSTALAÇÃO1
                         </BtnNewInstalationTxt>
                     </BtnNewInstalation>
                     <BtnLogout onPress={() => props.navigation.navigate('Login')}>

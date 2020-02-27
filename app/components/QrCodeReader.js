@@ -7,14 +7,16 @@ import {
   
   import QRCodeScanner from 'react-native-qrcode-scanner';
 
-function QrCodeReader(){
+  function QrCodeReader(){
+    console.warn(QRCodeScanner.Constants)
+
+    
     const onSuccess = () => {
         console.log('sucesso')
     }
     return(
         <QRCodeScanner
             onRead={onSuccess}
-            flashMode={QRCodeScanner.Constants.FlashMode.torch}      
             topContent={
             <Text style={styles.centerText}>
                 Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
