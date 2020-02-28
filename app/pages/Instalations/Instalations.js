@@ -3,46 +3,55 @@ import {
     Container, 
     Instalation,
     InstalationCode,
-    InstalationQrCode,
     InstalationInfo,
     InstalationDate,
     InstalationData,
     AcquiredPoints,
-    Row
+    Row,
+    styles
 } from './Instalations.styles'
-import QRCode from 'react-native-qrcode-svg';
+import { ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 function Instalations() {
     return(
         <Container>
-            <Instalation>
-                <InstalationCode>
-                    A85H7FXYY58
-                </InstalationCode>
-                <InstalationData>
-                    <InstalationInfo>
-                        <Row>
-                            <Icon name="calendar"/>
-                            <InstalationDate bold>
-                                Data: <InstalationDate>17/02/2020</InstalationDate>
-                            </InstalationDate>
-                        </Row>
-                        <Row>
-                            <Icon name="money" />
-                            <AcquiredPoints bold>
-                                Pontos: <AcquiredPoints acquired bold>+6542 pontos</AcquiredPoints>
-                            </AcquiredPoints>
-                        </Row>
-                    </InstalationInfo>
-                    <InstalationQrCode>
-                        <QRCode
-                            value="http://awesome.link.qr"
-                        />
-                    </InstalationQrCode>
-                </InstalationData>
-            </Instalation>
+            <ScrollView>
+                <Instalation>
+                    <InstalationCode style={styles.defaultTxt}>
+                        NBB89012081891982891892891892891892891298
+                    </InstalationCode>
+                    <InstalationData>
+                        <InstalationInfo>
+                            <Row>
+                                <Icon name="calendar" style={styles.icon} />
+                                <InstalationDate bold style={styles.defaultTxt}>
+                                    Data: <InstalationDate style={styles.defaultTxt}>17/02/2020</InstalationDate>
+                                </InstalationDate>
+                            </Row>
+                            <Row>
+                                <Icon name="money"  style={styles.icon} />
+                                <AcquiredPoints bold style={styles.defaultTxt}>
+                                    Pontos: <AcquiredPoints acquired bold style={styles.defaultTxt}>+6542 pontos</AcquiredPoints>
+                                </AcquiredPoints>
+                            </Row>
+                            <Row>
+                                <Icon name="map-marker"  style={styles.icon} />
+                                <AcquiredPoints bold style={styles.defaultTxt}>
+                                    Local: <AcquiredPoints style={styles.defaultTxt}>Rua Marques de Abrantes 168 - Rio de Janeiro</AcquiredPoints>
+                                </AcquiredPoints>
+                            </Row>
+                            <Row>
+                                <Icon name="star" style={styles.icon}  />
+                                <AcquiredPoints bold style={styles.defaultTxt}>
+                                    Modelo: <AcquiredPoints style={styles.defaultTxt}>AR-CONDICIONADO JANELA ELETRÔNICO 127V | 10.000 BTU/H</AcquiredPoints>
+                                </AcquiredPoints>
+                            </Row>
+                        </InstalationInfo>
+                    </InstalationData>
+                </Instalation>
+            </ScrollView>
         </Container>
     )
 }

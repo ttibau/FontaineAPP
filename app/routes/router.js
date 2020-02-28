@@ -2,7 +2,7 @@ import React from 'react'
 import { createAppContainer } from 'react-navigation'
 import {createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator, MaterialTopTabBar } from 'react-navigation-tabs'
-import { Profile, Products, Instalations, Login, InstalationForm } from '../pages'
+import { Profile, Products, Instalations, Login, InstalationForm, NewLogin } from '../pages'
 import { QrCodeReader } from '../components'
 import { SafeAreaView } from 'react-native'
 
@@ -16,7 +16,7 @@ function SafeAreaMaterialTopTabBar (props) {
 
 const appNavigator = createStackNavigator({
     Login: {
-        screen: Login
+        screen: NewLogin
     },
     Profile: {
         screen: createMaterialTopTabNavigator({

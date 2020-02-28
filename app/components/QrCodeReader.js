@@ -6,6 +6,7 @@ import {
     ScannerBottomContent,
     ImgLogo
 } from './styles'
+import { ScrollView } from 'react-native'
 
   import qrCode from '../assets/animations/qrCode.json'
   import QRCodeScanner from 'react-native-qrcode-scanner';
@@ -19,7 +20,8 @@ import {
     }
 
     return(
-        <QRCodeScanner
+        <ScrollView>
+            <QRCodeScanner
             onRead={onSuccess}
             topContent={
                 <ScannerContent>
@@ -36,7 +38,8 @@ import {
                     <TxtScannerTopContent style={styles.defaultTxt}>Trazendo a solução para você!</TxtScannerTopContent>
                 </ScannerBottomContent>
             }
-        />    
+            />    
+        </ScrollView>
     )
 }
 
