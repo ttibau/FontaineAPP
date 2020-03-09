@@ -11,13 +11,31 @@ import {
     Keyboard, 
     TouchableWithoutFeedback
 } from 'react-native'
+import { auth } from '../../services'
 
 function NewLogin(props) {
 
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95}))
     const [opacity] = useState(new Animated.Value(0))
     const [logo] = useState(new Animated.ValueXY({ x: 400, y: 155 }))
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     
+    async function authenticate() {
+        if(!email || !password) 
+            alert('Informe um e-mail ou senha')
+        
+        console.warn({ email, password })
+        try {
+            const response = await auth({ email, password })
+            console.warn(response)
+        } catch(error) {
+            alert(error.response.data.error)
+            // alert(error.error)
+        }
+        // auth({ email, password })
+        // props.navigation.navigate('Profile')
+    }
 
     useEffect(() => {
 
@@ -89,19 +107,21 @@ function NewLogin(props) {
                         autoCapitalize='none'
                         placeholder="E-mail"
                         style={styles.input}
-                        onChangeText={() => {}}
+                        value={email}
+                        onChangeText={text => setEmail(text)}
                     />
 
                     <TextInput 
                         autoCorrect={false}
                         autoCapitalize='none'
                         placeholder="Senha"
-                        onChangeText={() => {}}
+                        onChangeText={text => setPassword(text)}
+                        value={password}
                         style={styles.input}
                         secureTextEntry
                     />
 
-                    <TouchableOpacity style={styles.btnSubmit} onPress={() => props.navigation.navigate('Profile')}>
+                    <TouchableOpacity style={styles.btnSubmit} onPress={() => authenticate()}>
                         <Text style={styles.btnSubmitTxt}>Acessar</Text>
                     </TouchableOpacity>
 

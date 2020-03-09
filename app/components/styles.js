@@ -98,6 +98,7 @@ export const BtnGroup = styled.View`
 
 export const ScannerContent = styled.View`
     background-color: #002c77;
+    flex:1;
     height: 100%;
     width: 100%;
     align-items: center;
@@ -111,7 +112,7 @@ export const TxtScannerTopContent = styled.Text`
 export const ScannerBottomContent = styled.View`
     background-color: #002c77;
     width: 100%;
-    height: 100%
+    flex:1;
 `
 
 export const ImgLogo = styled.Image`
