@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { 
     ProfileContainer, 
     BlueBar,
@@ -33,6 +33,7 @@ import LottieView from 'lottie-react-native';
 import user from '../../assets/animations/user.json'
 import { ScrollView } from 'react-native'
 import {request, PERMISSIONS, check} from 'react-native-permissions';
+import AsyncStorage from '@react-native-community/async-storage'
 
 function Profile(props) {
 
@@ -45,6 +46,15 @@ function Profile(props) {
             console.log(error)
         }
     }
+
+    async function logout() {
+        await AsyncStorage.removeItem('@user')
+        props.navigation.navigate('Login')
+    }
+
+    useEffect(() => {
+
+    }, [])
     
     return (
         <ProfileContainer>
@@ -99,7 +109,7 @@ function Profile(props) {
                             NOVA INSTALAÇÃO
                         </BtnNewInstalationTxt>
                     </BtnNewInstalation>
-                    <BtnLogout onPress={() => props.navigation.navigate('Login')}>
+                    <BtnLogout onPress={() => logout()}>
                         <Icon name="sign-out" color={theme.color5} size={15} /> 
                         <BtnLogoutTxt style={styles.defaultTxt}>
                             SAIR

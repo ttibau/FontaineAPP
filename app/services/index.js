@@ -19,6 +19,10 @@ export async function forgotPassword(email){
     return await axios.post(baseUrl + '/auth/forgot-password', params)
 }
 
+export async function myInstallations(token) {
+    return await axios.get(baseUrl + '/installations/myInstallations', { headers: { 'authorization' : 'Bearer ' + token }})
+}
+
 // Resetar a senha
 // { email, token, password }
 export async function resetPassword(params) {

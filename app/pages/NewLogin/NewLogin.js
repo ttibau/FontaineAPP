@@ -9,9 +9,11 @@ import {
     StyleSheet,
     Animated,
     Keyboard, 
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,
+    ActivityIndicator,
 } from 'react-native'
 import { auth } from '../../services'
+import AsyncStorage from '@react-native-community/async-storage'
 
 function NewLogin(props) {
 
@@ -20,28 +22,33 @@ function NewLogin(props) {
     const [logo] = useState(new Animated.ValueXY({ x: 400, y: 155 }))
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
     
     async function authenticate() {
-        if(!email || !password) 
-            alert('Informe um e-mail ou senha')
-        
-        console.warn({ email, password })
-        try {
-            const response = await auth({ email, password })
-            console.warn(response)
-        } catch(error) {
-            alert(error.response.data.error)
-            // alert(error.error)
+        if ( !email || !password) {
+            alert('informe email e senha')
+        } else {
+            try {
+                setLoading(true)
+                const response = await auth({email, password})
+                if (response.data) {
+                    await AsyncStorage.setItem('@user', JSON.stringify(response.data))
+                    props.navigation.navigate('Profile')
+                } else {
+                    console.warn('AOD90AIOASOI')
+                }
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+                alert(error.response.data.error)
+            }
         }
-        // auth({ email, password })
-        // props.navigation.navigate('Profile')
     }
 
     useEffect(() => {
 
         keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', keyboardDidShow)
         keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', keyboardDidHide)
-        
 
         Animated.parallel([
             Animated.spring(offset.y, {
@@ -54,7 +61,15 @@ function NewLogin(props) {
                 duration: 200
             })
         ]).start()
+
+        verifyIfUserIsAuthenticated()
     }, [])
+
+    async function verifyIfUserIsAuthenticated() {
+        const user = await AsyncStorage.getItem('@user')
+        if(user)
+            props.navigation.navigate('Profile')
+    }
 
     function keyboardDidShow() {
         Animated.parallel([
@@ -84,52 +99,61 @@ function NewLogin(props) {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <KeyboardAvoidingView style={styles.background}>
-                <View style={styles.containerLogo}>
-                    <Animated.Image 
-                        source={require('../../assets/img/logo_com_pinguim.png')}
-                        style={{
-                            maxWidth: '95%',
-                            width: logo.x,
-                            height: logo.y
-                        }}
-                    />
+            <>
+                {loading &&
+                <View style={{flex: 1, justifyContent: "center"}} >
+                    <ActivityIndicator size='large' />
                 </View>
+                }
+                {!loading && 
+                    <KeyboardAvoidingView style={styles.background}>
+                        <View style={styles.containerLogo}>
+                            <Animated.Image 
+                                source={require('../../assets/img/logo_com_pinguim.png')}
+                                style={{
+                                    maxWidth: '95%',
+                                    width: logo.x,
+                                    height: logo.y
+                                }}
+                            />
+                        </View>
 
-                <Animated.View style={[styles.container, {
-                    opacity: opacity,
-                    transform: [
-                        { translateY: offset.y }
-                    ]
-                }]}>
-                    <TextInput 
-                        autoCorrect={false}
-                        autoCapitalize='none'
-                        placeholder="E-mail"
-                        style={styles.input}
-                        value={email}
-                        onChangeText={text => setEmail(text)}
-                    />
+                        <Animated.View style={[styles.container, {
+                            opacity: opacity,
+                            transform: [
+                                { translateY: offset.y }
+                            ]
+                        }]}>
+                            <TextInput 
+                                autoCorrect={false}
+                                autoCapitalize='none'
+                                placeholder="E-mail"
+                                style={styles.input}
+                                value={email}
+                                onChangeText={text => setEmail(text)}
+                            />
 
-                    <TextInput 
-                        autoCorrect={false}
-                        autoCapitalize='none'
-                        placeholder="Senha"
-                        onChangeText={text => setPassword(text)}
-                        value={password}
-                        style={styles.input}
-                        secureTextEntry
-                    />
+                            <TextInput 
+                                autoCorrect={false}
+                                autoCapitalize='none'
+                                placeholder="Senha"
+                                onChangeText={text => setPassword(text)}
+                                value={password}
+                                style={styles.input}
+                                secureTextEntry
+                            />
 
-                    <TouchableOpacity style={styles.btnSubmit} onPress={() => authenticate()}>
-                        <Text style={styles.btnSubmitTxt}>Acessar</Text>
-                    </TouchableOpacity>
+                            <TouchableOpacity style={styles.btnSubmit} onPress={() => authenticate()}>
+                                <Text style={styles.btnSubmitTxt}>Acessar</Text>
+                            </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <Text style={styles.btnDontHaveAccount}>Ainda não tenho uma conta</Text>
-                    </TouchableOpacity>
-                </Animated.View>
-            </KeyboardAvoidingView>
+                            <TouchableOpacity>
+                                <Text style={styles.btnDontHaveAccount}>Ainda não tenho uma conta</Text>
+                            </TouchableOpacity>
+                        </Animated.View>
+                    </KeyboardAvoidingView>
+                }
+            </>
         </TouchableWithoutFeedback>
     )
 }

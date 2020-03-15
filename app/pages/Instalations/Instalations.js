@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { 
     Container, 
     Instalation,
@@ -12,9 +12,15 @@ import {
 } from './Instalations.styles'
 import { ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { myInstallations } from '../../services/index'
 
 
-function Instalations() {
+function Instalations(props) {
+
+    useEffect(() => {
+        
+    }, [props.navigation])
+
     return(
         <Container>
             <ScrollView>
