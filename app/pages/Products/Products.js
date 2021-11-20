@@ -14,19 +14,16 @@ import {
     ProductDescription
 } from './Products.styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { ScrollView, View } from 'react-native'
+import { ScrollView } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { GetProductModal } from '../../components/'
 import { styles } from '../../components/styles'
-import LottieView from 'lottie-react-native';
-import coin from '../../assets/animations/coin.json'
 
 function Products() {
     const dispatch = useDispatch()
     return (
         <Container>
             <InfoBar>
-                <LottieView source={coin} autoPlay loop style={styles.coinAnimation} />
                 <PointsCount style={styles.defaultTxt}>23563 pontos</PointsCount>
             </InfoBar>
             <ScrollView>

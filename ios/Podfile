@@ -53,6 +53,7 @@ target 'Fontaine' do
   permissions_path = '../node_modules/react-native-permissions/ios'
   pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
 
+
   target 'FontaineTests' do
     inherit! :search_paths
     # Pods for testing

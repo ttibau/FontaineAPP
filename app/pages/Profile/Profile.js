@@ -29,23 +29,11 @@ import {
 } from './Profile.style'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { theme } from '../../config/theme'
-import LottieView from 'lottie-react-native';
-import user from '../../assets/animations/user.json'
 import { ScrollView } from 'react-native'
-import {request, PERMISSIONS, check} from 'react-native-permissions';
+import { PERMISSIONS, check} from 'react-native-permissions';
 import AsyncStorage from '@react-native-community/async-storage'
 
 function Profile(props) {
-
-    async function checkPermission() {
-        try {
-            const permission = await check(PERMISSIONS.IOS.CAMERA)
-            alert(permission)
-            console.log(permission)
-        } catch(error) {
-            console.log(error)
-        }
-    }
 
     async function logout() {
         await AsyncStorage.removeItem('@user')
@@ -69,7 +57,6 @@ function Profile(props) {
                 </BlueBar>
                 <ProfileImageContent>
                     <PictureContainer>
-                        <LottieView source={user} autoPlay loop style={styles.userAnimation} />
                     </PictureContainer>
                 </ProfileImageContent>
                 <ProfileContent>
